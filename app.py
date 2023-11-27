@@ -5,10 +5,11 @@ import chromadb
 import jsonlines
 import model
 import os
+from flask_cors import CORS
 default_response = "This information is not available at the moment.For more queries can contact our executive"
 
 app = Flask(__name__)
-
+CORS(app)
 openai.api_key = OPEN_AI_KEY
 
 client = chromadb.PersistentClient()
